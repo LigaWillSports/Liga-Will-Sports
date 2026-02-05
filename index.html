@@ -1,3 +1,104 @@
+Quero pode tipo adicionar outros dias de jogo, outras rodadas
+19:32
+
+Vou criar uma versão melhorada do site que permite adicionar múltiplas rodadas/dias de jogos. Vou fazer isso de forma interativa e fácil de usar.
+Concluído
+
+Pronto! Criei uma nova versão do site com sistema de múltiplas rodadas.
+O que mudou:
+
+✅ Sistema de abas - Navegue entre rodadas clicando nos botões no topo ✅ 3 rodadas de exemplo - Já configuradas com datas e jogos diferentes ✅ Design melhorado - Mantendo o visual vermelho/preto da Liga Will Sports ✅ Responsivo - Funciona bem em celular e desktop
+Como adicionar mais rodadas:
+
+    Adicione um botão na seção rounds-nav:
+
+html
+
+<button class="round-tab" onclick="showRound(4)">Rodada 4</button>
+
+    Copie uma seção de rodada e ajuste:
+
+html
+
+<div id="round4" class="round-section">
+    <div class="round-header">
+        <h2>Rodada 4</h2>
+        <div class="date">19 de Abril</div>
+    </div>
+    <!-- Adicione os jogos aqui -->
+</div>
+
+É só editar as datas, horários e times conforme necessário!
+Liga will sports
+Código · HTML 
+Logo
+Imagem · PNG 
+
+perfeito, so quero q a parte de baixo fique igual a antes... a parte da temporada 2026 ali ta separado agora
+19:40
++10-11
++8-4
++8-4
++8-9
++8-10
++4-3
+Concluído
+
+Pronto! Agora o rodapé "Temporada 2026 • Liga Will Sports" está grudado na parte de baixo de cada rodada, igual era antes. Cada rodada tem seu próprio rodapé integrado ao card!
+Liga will sports
+Código · HTML 
+
+12 de abril 
+8 horas 
+Sapo Basketball vs Raposas
+
+10 horas 
+Tytos Basquete vs Alvorada 
+12 horas 
+POA Bryant vs plano A
+14 horas 
+Ducks Basquete vs Benchers  Basquete
+16 horas 
+VF Hoopers vs Bex Team
+18 horas 
+Basquete Guaíba vs Masca Hooper
+20 horas 
+Olaria Basketball vs Rays Basquete
+
+DEIXE SO A PRIMEIRA RODADA E ESSA SEGUNDA.
+19:41
++4-5
++23-23
++15-15
++15-15
++21-26
+Concluído
+
+Deixa eu recriar o arquivo completo de forma mais limpa:
+Concluído
+
+Pronto! Agora o site está com apenas 2 rodadas:
+
+✅ Rodada 1 - 29 de Março (jogos originais)
+✅ Rodada 2 - 12 de Abril (com os novos times que você passou)
+
+O rodapé está grudado em cada rodada, igual ao design original!
+Liga will sports
+Código · HTML 
+
+Nao quero que a parte de cima fique separada... e quero o vermelho q nem tava antes
+19:51
++17-25
++9-12
+Concluído
+
+Pronto! Agora o cabeçalho não está mais separado e o título "Liga Will Sports" voltou a ser vermelho sólido como estava antes!
+Liga will sports
+Código · HTML 
+
+
+Claude é uma IA e pode cometer erros. Por favor, verifique as respostas.
+Liga will sports · HTML
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -47,18 +148,10 @@
         }
 
         .header {
-            background: rgba(20, 20, 20, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            box-shadow: 
-                0 0 0 1px rgba(255, 255, 255, 0.1),
-                0 20px 60px rgba(0, 0, 0, 0.5),
-                0 0 100px rgba(204, 0, 0, 0.2);
             padding: 40px 30px;
             text-align: center;
             margin-bottom: 30px;
             position: relative;
-            overflow: hidden;
         }
 
         .header::before {
@@ -69,7 +162,7 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, #cc0000 0%, #8b0000 100%);
-            opacity: 0.1;
+            opacity: 0;
         }
 
         .logo-container {
@@ -93,10 +186,7 @@
             font-size: 2.8em;
             font-weight: 800;
             margin-bottom: 8px;
-            background: linear-gradient(135deg, #cc0000, #ff3333);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #cc0000;
             text-shadow: 0 2px 20px rgba(204, 0, 0, 0.3);
             letter-spacing: -1px;
             position: relative;
@@ -553,3 +643,4 @@
     </script>
 </body>
 </html>
+
