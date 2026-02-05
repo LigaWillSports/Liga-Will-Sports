@@ -78,15 +78,19 @@
 
         .logo-container {
             position: relative;
-            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 20px;
         }
 
         .logo {
             width: 120px;
             height: 120px;
-            margin-bottom: 15px;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            display: block;
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
@@ -277,7 +281,9 @@
     <div class="container">
 
         <div class="header">
-            <img src="logo.png" alt="Liga Will Sports" class="logo">
+            <div class="logo-container">
+                <img src="logo.png" alt="Liga Will Sports" class="logo">
+            </div>
             <h1>Liga Will Sports</h1>
             <div class="date">29 de Março</div>
         </div>
