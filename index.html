@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liga Will Sports - 29/03</title>
+    <title>Liga Will Sports - Tabela de Jogos</title>
     <style>
         * {
             margin: 0;
@@ -15,9 +15,6 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #0a0a0a;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
@@ -43,6 +40,13 @@
         }
 
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
             background: rgba(20, 20, 20, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 24px;
@@ -50,17 +54,9 @@
                 0 0 0 1px rgba(255, 255, 255, 0.1),
                 0 20px 60px rgba(0, 0, 0, 0.5),
                 0 0 100px rgba(204, 0, 0, 0.2);
-            overflow: hidden;
-            max-width: 900px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #cc0000 0%, #8b0000 100%);
             padding: 40px 30px;
             text-align: center;
+            margin-bottom: 30px;
             position: relative;
             overflow: hidden;
         }
@@ -72,8 +68,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/></svg>');
-            opacity: 0.3;
+            background: linear-gradient(135deg, #cc0000 0%, #8b0000 100%);
+            opacity: 0.1;
         }
 
         .logo-container {
@@ -97,24 +93,97 @@
             font-size: 2.8em;
             font-weight: 800;
             margin-bottom: 8px;
-            color: white;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #cc0000, #ff3333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 20px rgba(204, 0, 0, 0.3);
             letter-spacing: -1px;
             position: relative;
         }
 
-        .header .date {
-            font-size: 1.4em;
-            font-weight: 400;
+        .header .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+        }
+
+        .rounds-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .round-tab {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        .round-tab:hover {
+            background: rgba(40, 40, 40, 0.9);
+            border-color: rgba(204, 0, 0, 0.3);
+            color: white;
+        }
+
+        .round-tab.active {
+            background: linear-gradient(135deg, #cc0000, #ff1a1a);
+            border-color: #cc0000;
+            color: white;
+            box-shadow: 0 4px 12px rgba(204, 0, 0, 0.4);
+        }
+
+        .round-section {
+            display: none;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .round-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .round-header {
+            background: linear-gradient(135deg, #cc0000 0%, #8b0000 100%);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .round-header h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .round-header .date {
+            font-size: 1.3em;
             color: rgba(255, 255, 255, 0.9);
             letter-spacing: 2px;
             text-transform: uppercase;
-            position: relative;
         }
 
         .schedule-wrapper {
             padding: 30px;
-            background: linear-gradient(to bottom, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.9));
         }
 
         .match-card {
@@ -220,7 +289,11 @@
                 font-size: 2em;
             }
 
-            .header .date {
+            .round-header h2 {
+                font-size: 1.5em;
+            }
+
+            .round-header .date {
                 font-size: 1.1em;
             }
 
@@ -252,6 +325,15 @@
             .vs-badge {
                 font-size: 0.85em;
             }
+
+            .rounds-nav {
+                gap: 8px;
+            }
+
+            .round-tab {
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
         }
 
         @media (max-width: 480px) {
@@ -259,12 +341,9 @@
                 padding: 10px;
             }
 
-            .container {
-                border-radius: 16px;
-            }
-
             .header {
                 padding: 30px 20px;
+                border-radius: 16px;
             }
 
             .header h1 {
@@ -273,89 +352,204 @@
 
             .match-card {
                 padding: 16px;
+                border-radius: 12px;
+            }
+
+            .round-section {
+                border-radius: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-
         <div class="header">
             <div class="logo-container">
                 <img src="logo.png" alt="Liga Will Sports" class="logo">
             </div>
             <h1>Liga Will Sports</h1>
-            <div class="date">29 de Março</div>
-        </div>
-        
-        <div class="schedule-wrapper">
-            <div class="match-card">
-                <div class="time-badge">08:00</div>
-                <div class="match-info">
-                    <div class="team">Cambrayers Basquetebol</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">Sultanes</div>
-                </div>
-            </div>
-
-            <div class="match-card">
-                <div class="time-badge">10:00</div>
-                <div class="match-info">
-                    <div class="team">VF Hoopers</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">Rays Basquete</div>
-                </div>
-            </div>
-
-            <div class="match-card">
-                <div class="time-badge">12:00</div>
-                <div class="match-info">
-                    <div class="team">Basquete São Léo</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">Black Warriors</div>
-                </div>
-            </div>
-
-            <div class="match-card">
-                <div class="time-badge">14:00</div>
-                <div class="match-info">
-                    <div class="team">Olaria Basketball</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">San Luis Spartans</div>
-                </div>
-            </div>
-
-            <div class="match-card">
-                <div class="time-badge">16:00</div>
-                <div class="match-info">
-                    <div class="team">Raposas</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">Masca Hooper</div>
-                </div>
-            </div>
-
-            <div class="match-card">
-                <div class="time-badge">18:00</div>
-                <div class="match-info">
-                    <div class="team">Basquete Guaíba</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">Benchers Basquete</div>
-                </div>
-            </div>
-
-            <div class="match-card">
-                <div class="time-badge">20:00</div>
-                <div class="match-info">
-                    <div class="team">Bex Team</div>
-                    <div class="vs-badge">VS</div>
-                    <div class="team">RTG Basquete</div>
-                </div>
-            </div>
+            <div class="subtitle">Temporada 2026</div>
         </div>
 
-        <div class="footer">
-            Temporada 2026 • Liga Will Sports
+        <div class="rounds-nav">
+            <button class="round-tab active" onclick="showRound(1)">Rodada 1</button>
+            <button class="round-tab" onclick="showRound(2)">Rodada 2</button>
         </div>
+
+        <!-- RODADA 1 -->
+        <div id="round1" class="round-section active">
+            <div class="round-header">
+                <h2>Rodada 1</h2>
+                <div class="date">29 de Março</div>
+            </div>
+            
+            <div class="schedule-wrapper">
+                <div class="match-card">
+                    <div class="time-badge">08:00</div>
+                    <div class="match-info">
+                        <div class="team">Cambrayers Basquetebol</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Sultanes</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">10:00</div>
+                    <div class="match-info">
+                        <div class="team">VF Hoopers</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Rays Basquete</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">12:00</div>
+                    <div class="match-info">
+                        <div class="team">Basquete São Léo</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Black Warriors</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">14:00</div>
+                    <div class="match-info">
+                        <div class="team">Olaria Basketball</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">San Luis Spartans</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">16:00</div>
+                    <div class="match-info">
+                        <div class="team">Raposas</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Masca Hooper</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">18:00</div>
+                    <div class="match-info">
+                        <div class="team">Basquete Guaíba</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Benchers Basquete</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">20:00</div>
+                    <div class="match-info">
+                        <div class="team">Bex Team</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">RTG Basquete</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                Temporada 2026 • Liga Will Sports
+            </div>
+        </div>
+
+        <!-- RODADA 2 -->
+        <div id="round2" class="round-section">
+            <div class="round-header">
+                <h2>Rodada 2</h2>
+                <div class="date">12 de Abril</div>
+            </div>
+            
+            <div class="schedule-wrapper">
+                <div class="match-card">
+                    <div class="time-badge">08:00</div>
+                    <div class="match-info">
+                        <div class="team">Sapo Basketball</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Raposas</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">10:00</div>
+                    <div class="match-info">
+                        <div class="team">Tytos Basquete</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Alvorada</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">12:00</div>
+                    <div class="match-info">
+                        <div class="team">POA Bryant</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Plano A</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">14:00</div>
+                    <div class="match-info">
+                        <div class="team">Ducks Basquete</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Benchers Basquete</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">16:00</div>
+                    <div class="match-info">
+                        <div class="team">VF Hoopers</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Bex Team</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">18:00</div>
+                    <div class="match-info">
+                        <div class="team">Basquete Guaíba</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Masca Hooper</div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="time-badge">20:00</div>
+                    <div class="match-info">
+                        <div class="team">Olaria Basketball</div>
+                        <div class="vs-badge">VS</div>
+                        <div class="team">Rays Basquete</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                Temporada 2026 • Liga Will Sports
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        function showRound(roundNumber) {
+            // Esconder todas as rodadas
+            document.querySelectorAll('.round-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remover active de todos os tabs
+            document.querySelectorAll('.round-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar a rodada selecionada
+            document.getElementById('round' + roundNumber).classList.add('active');
+            
+            // Ativar o tab correspondente
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
