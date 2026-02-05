@@ -12,136 +12,269 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(204, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(204, 0, 0, 0.1) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
         }
 
         .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 100px rgba(204, 0, 0, 0.2);
             overflow: hidden;
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         .header {
-            background: linear-gradient(135deg, #cc0000 0%, #000000 100%);
-            color: white;
-            padding: 30px;
+            background: linear-gradient(135deg, #cc0000 0%, #8b0000 100%);
+            padding: 40px 30px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: white;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+            position: relative;
         }
 
         .header .date {
-            font-size: 1.3em;
-            font-weight: 300;
-            opacity: 0.95;
+            font-size: 1.4em;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .schedule-wrapper {
+            padding: 30px;
+            background: linear-gradient(to bottom, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.9));
         }
 
-        thead {
-            background: linear-gradient(135deg, #cc0000 0%, #1a0000 100%);
+        .match-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .match-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #cc0000, #ff3333);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .match-card:hover {
+            background: rgba(40, 40, 40, 0.9);
+            border-color: rgba(204, 0, 0, 0.3);
+            transform: translateX(8px);
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(204, 0, 0, 0.2);
+        }
+
+        .match-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .match-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .time-badge {
+            background: linear-gradient(135deg, #cc0000, #ff1a1a);
             color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.4em;
+            min-width: 100px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
+            flex-shrink: 0;
         }
 
-        thead th {
-            padding: 20px;
-            text-align: left;
-            font-size: 1.1em;
+        .match-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team {
+            color: #ffffff;
             font-weight: 600;
+            font-size: 1.15em;
+            text-align: center;
+            flex: 1;
+            transition: color 0.3s ease;
+        }
+
+        .match-card:hover .team {
+            color: #ff6666;
+        }
+
+        .vs-badge {
+            background: rgba(204, 0, 0, 0.2);
+            color: #cc0000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            border: 1px solid rgba(204, 0, 0, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        tbody tr {
-            border-bottom: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
-        }
-
-        tbody tr:hover {
-            background: #ffe6e6;
-            transform: scale(1.01);
-            box-shadow: 0 4px 8px rgba(204, 0, 0, 0.2);
-        }
-
-        tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        tbody td {
+        .footer {
+            background: rgba(15, 15, 15, 0.9);
             padding: 20px;
-            font-size: 1em;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .time {
-            color: #cc0000;
-            font-weight: 700;
-            font-size: 1.2em;
-            min-width: 100px;
-        }
-
-        .match {
-            font-size: 1.1em;
-            color: #1a1a1a;
-        }
-
-        .team {
-            font-weight: 600;
-        }
-
-        .vs {
-            color: #999;
-            font-weight: 400;
-            padding: 0 10px;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .header .date {
-                font-size: 1em;
+                font-size: 1.1em;
             }
 
-            thead th {
-                padding: 15px 10px;
-                font-size: 0.9em;
+            .schedule-wrapper {
+                padding: 20px;
             }
 
-            tbody td {
-                padding: 15px 10px;
-                font-size: 0.9em;
+            .match-card {
+                flex-direction: column;
+                gap: 16px;
+                padding: 20px;
             }
 
-            .time {
-                font-size: 1em;
+            .match-info {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
             }
 
-            .match {
-                font-size: 0.95em;
+            .time-badge {
+                width: 100%;
+                font-size: 1.2em;
+            }
+
+            .team {
+                font-size: 1.05em;
+            }
+
+            .vs-badge {
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 16px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .match-card {
+                padding: 16px;
             }
         }
     </style>
@@ -149,49 +282,83 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="logo.png" alt="Liga Will Sports" class="logo">
+            <div class="logo-container">
+                <div class="logo">
+                    🏀
+                </div>
+            </div>
             <h1>Liga Will Sports</h1>
             <div class="date">29 de Março</div>
         </div>
         
-        <table>
-            <thead>
-                <tr>
-                    <th>Horário</th>
-                    <th>Partida</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="time">08:00</td>
-                    <td class="match"><span class="team">Cambrayers Basquetebol</span> <span class="vs">vs</span> <span class="team">Sultanes</span></td>
-                </tr>
-                <tr>
-                    <td class="time">10:00</td>
-                    <td class="match"><span class="team">VF Hoopers</span> <span class="vs">vs</span> <span class="team">Rays Basquete</span></td>
-                </tr>
-                <tr>
-                    <td class="time">12:00</td>
-                    <td class="match"><span class="team">Basquete São Léo</span> <span class="vs">vs</span> <span class="team">Black Warriors</span></td>
-                </tr>
-                <tr>
-                    <td class="time">14:00</td>
-                    <td class="match"><span class="team">Olaria Basketball</span> <span class="vs">vs</span> <span class="team">San Luis Spartans</span></td>
-                </tr>
-                <tr>
-                    <td class="time">16:00</td>
-                    <td class="match"><span class="team">Plano A</span> <span class="vs">vs</span> <span class="team">Masca Hooper</span></td>
-                </tr>
-                <tr>
-                    <td class="time">18:00</td>
-                    <td class="match"><span class="team">Basquete Guaíba</span> <span class="vs">vs</span> <span class="team">Benchers Basquete</span></td>
-                </tr>
-                <tr>
-                    <td class="time">20:00</td>
-                    <td class="match"><span class="team">Bex Team</span> <span class="vs">vs</span> <span class="team">RTG Basquete</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="schedule-wrapper">
+            <div class="match-card">
+                <div class="time-badge">08:00</div>
+                <div class="match-info">
+                    <div class="team">Cambrayers Basquetebol</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">Sultanes</div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="time-badge">10:00</div>
+                <div class="match-info">
+                    <div class="team">VF Hoopers</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">Rays Basquete</div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="time-badge">12:00</div>
+                <div class="match-info">
+                    <div class="team">Basquete São Léo</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">Black Warriors</div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="time-badge">14:00</div>
+                <div class="match-info">
+                    <div class="team">Olaria Basketball</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">San Luis Spartans</div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="time-badge">16:00</div>
+                <div class="match-info">
+                    <div class="team">Plano A</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">Masca Hooper</div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="time-badge">18:00</div>
+                <div class="match-info">
+                    <div class="team">Basquete Guaíba</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">Benchers Basquete</div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="time-badge">20:00</div>
+                <div class="match-info">
+                    <div class="team">Bex Team</div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team">RTG Basquete</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Temporada 2025 • Liga Will Sports
+        </div>
     </div>
 </body>
 </html>
