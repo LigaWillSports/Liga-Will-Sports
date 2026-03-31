@@ -135,10 +135,9 @@
             background: rgba(20, 20, 20, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 24px;
-            box-shadow: 
-                0 0 0 1px rgba(255, 255, 255, 0.1),
-                0 20px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 60px rgba(0, 0, 0, 0.5);
             overflow: hidden;
+            margin-bottom: 30px;
         }
 
         .round-section.active {
@@ -205,17 +204,11 @@
             background: rgba(40, 40, 40, 0.9);
             border-color: rgba(204, 0, 0, 0.3);
             transform: translateX(8px);
-            box-shadow: 
-                0 8px 24px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(204, 0, 0, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         .match-card:hover::before {
             transform: scaleY(1);
-        }
-
-        .match-card:last-child {
-            margin-bottom: 0;
         }
 
         .time-badge {
@@ -227,7 +220,6 @@
             font-size: 1.4em;
             min-width: 100px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
             flex-shrink: 0;
         }
 
@@ -239,17 +231,51 @@
             gap: 20px;
         }
 
+        .team-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .team {
             color: #ffffff;
             font-weight: 600;
             font-size: 1.15em;
             text-align: center;
-            flex: 1;
-            transition: color 0.3s ease;
         }
 
-        .match-card:hover .team {
-            color: #ff6666;
+        /* Vencedor Verde */
+        .winner .team {
+            color: #00ff88;
+            font-weight: 800;
+        }
+
+        .score-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .score {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .winner-score {
+            color: #00ff88;
+        }
+
+        .score-divider {
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
         }
 
         .vs-badge {
@@ -261,92 +287,21 @@
             font-size: 0.9em;
             border: 1px solid rgba(204, 0, 0, 0.3);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .footer {
-            background: rgba(15, 15, 15, 0.9);
             padding: 20px;
             text-align: center;
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9em;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .round-header h2 {
-                font-size: 1.5em;
-            }
-
-            .round-header .date {
-                font-size: 1.1em;
-            }
-
-            .schedule-wrapper {
-                padding: 20px;
-            }
-
-            .match-card {
-                flex-direction: column;
-                gap: 16px;
-                padding: 20px;
-            }
-
-            .match-info {
-                flex-direction: column;
-                width: 100%;
-                gap: 12px;
-            }
-
-            .time-badge {
-                width: 100%;
-                font-size: 1.2em;
-            }
-
-            .team {
-                font-size: 1.05em;
-            }
-
-            .vs-badge {
-                font-size: 0.85em;
-            }
-
-            .rounds-nav {
-                gap: 8px;
-            }
-
-            .round-tab {
-                padding: 10px 16px;
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
-            .header {
-                padding: 30px 20px;
-                border-radius: 16px;
-            }
-
-            .header h1 {
-                font-size: 1.6em;
-            }
-
-            .match-card {
-                padding: 16px;
-                border-radius: 12px;
-            }
-
-            .round-section {
-                border-radius: 16px;
-            }
+            .match-card { flex-direction: column; padding: 20px; }
+            .match-info { flex-direction: column; width: 100%; }
+            .score-container { order: 2; margin: 10px 0; width: 100%; }
+            .team-container:first-child { order: 1; }
+            .team-container:last-child { order: 3; }
         }
     </style>
 </head>
@@ -361,12 +316,11 @@
         </div>
 
         <div class="rounds-nav">
-            <button class="round-tab active" onclick="showRound(1)">Rodada 1</button>
-            <button class="round-tab" onclick="showRound(2)">Rodada 2</button>
+            <button class="round-tab" onclick="showRound(1, this)">Rodada 1</button>
+            <button class="round-tab active" onclick="showRound(2, this)">Rodada 2</button>
         </div>
 
-        <!-- RODADA 1 -->
-        <div id="round1" class="round-section active">
+        <div id="round1" class="round-section">
             <div class="round-header">
                 <h2>Rodada 1</h2>
                 <div class="date">29 de Março</div>
@@ -374,67 +328,111 @@
             
             <div class="schedule-wrapper">
                 <div class="match-card">
-                    <div class="time-badge">10:00</div>
+                    <div class="time-badge" style="background: #444;">FIM</div>
                     <div class="match-info">
-                        <div class="team">VF Hoopers</div>
-                        <div class="vs-badge">VS</div>
-                        <div class="team">Rays Basquete</div>
+                        <div class="team-container">
+                            <div class="team">Rays Basquete</div>
+                        </div>
+                        <div class="score-container">
+                            <span class="score">41</span>
+                            <span class="score-divider">-</span>
+                            <span class="score winner-score">44</span>
+                        </div>
+                        <div class="team-container winner">
+                            <div class="team">VF Hoopers</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="match-card">
-                    <div class="time-badge">12:00</div>
+                    <div class="time-badge" style="background: #444;">FIM</div>
                     <div class="match-info">
-                        <div class="team">Basquete São Léo</div>
-                        <div class="vs-badge">VS</div>
-                        <div class="team">Black Warriors</div>
+                        <div class="team-container winner">
+                            <div class="team">Basquete São Léo</div>
+                        </div>
+                        <div class="score-container">
+                            <span class="score winner-score">49</span>
+                            <span class="score-divider">-</span>
+                            <span class="score">48</span>
+                        </div>
+                        <div class="team-container">
+                            <div class="team">Black Warriors</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="match-card">
-                    <div class="time-badge">14:00</div>
+                    <div class="time-badge" style="background: #444;">FIM</div>
                     <div class="match-info">
-                        <div class="team">Olaria Basketball</div>
-                        <div class="vs-badge">VS</div>
-                        <div class="team">San Luis Spartans</div>
+                        <div class="team-container">
+                            <div class="team">San Luis Spartans</div>
+                        </div>
+                        <div class="score-container">
+                            <span class="score">52</span>
+                            <span class="score-divider">-</span>
+                            <span class="score winner-score">56</span>
+                        </div>
+                        <div class="team-container winner">
+                            <div class="team">Olaria Basketball</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="match-card">
-                    <div class="time-badge">16:00</div>
+                    <div class="time-badge" style="background: #444;">FIM</div>
                     <div class="match-info">
-                        <div class="team">Raposas</div>
-                        <div class="vs-badge">VS</div>
-                        <div class="team">Masca Hooper</div>
+                        <div class="team-container winner">
+                            <div class="team">Raposas</div>
+                        </div>
+                        <div class="score-container">
+                            <span class="score winner-score">59</span>
+                            <span class="score-divider">-</span>
+                            <span class="score">41</span>
+                        </div>
+                        <div class="team-container">
+                            <div class="team">Masca Hooper</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="match-card">
-                    <div class="time-badge">18:00</div>
+                    <div class="time-badge" style="background: #444;">FIM</div>
                     <div class="match-info">
-                        <div class="team">Basquete Guaíba</div>
-                        <div class="vs-badge">VS</div>
-                        <div class="team">Benchers Basquete</div>
+                        <div class="team-container winner">
+                            <div class="team">Benchers Basquete</div>
+                        </div>
+                        <div class="score-container">
+                            <span class="score winner-score">59</span>
+                            <span class="score-divider">-</span>
+                            <span class="score">55</span>
+                        </div>
+                        <div class="team-container">
+                            <div class="team">Basquete Guaíba</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="match-card">
-                    <div class="time-badge">20:00</div>
+                    <div class="time-badge" style="background: #444;">FIM</div>
                     <div class="match-info">
-                        <div class="team">Bex Team</div>
-                        <div class="vs-badge">VS</div>
-                        <div class="team">RTG Basquete</div>
+                        <div class="team-container">
+                            <div class="team">RTG Basquete</div>
+                        </div>
+                        <div class="score-container">
+                            <span class="score">60</span>
+                            <span class="score-divider">-</span>
+                            <span class="score winner-score">62</span>
+                        </div>
+                        <div class="team-container winner">
+                            <div class="team">Bex Team</div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="footer">
-                Temporada 2026 • Liga Will Sports
-            </div>
+            <div class="footer">Temporada 2026 • Liga Will Sports</div>
         </div>
 
-        <!-- RODADA 2 -->
-        <div id="round2" class="round-section">
+        <div id="round2" class="round-section active">
             <div class="round-header">
                 <h2>Rodada 2</h2>
                 <div class="date">12 de Abril</div>
@@ -444,91 +442,76 @@
                 <div class="match-card">
                     <div class="time-badge">08:00</div>
                     <div class="match-info">
-                        <div class="team">Sapo Basketball</div>
+                        <div class="team-container"><div class="team">Sapo Basketball</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">Raposas</div>
+                        <div class="team-container"><div class="team">Raposas</div></div>
                     </div>
                 </div>
 
                 <div class="match-card">
                     <div class="time-badge">10:00</div>
                     <div class="match-info">
-                        <div class="team">Embaixadores</div>
+                        <div class="team-container"><div class="team">Embaixadores</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">Corinthians Alvorada pma/smcej</div>
+                        <div class="team-container"><div class="team">Corinthians Alvorada</div></div>
                     </div>
                 </div>
 
                 <div class="match-card">
                     <div class="time-badge">12:00</div>
                     <div class="match-info">
-                        <div class="team">POA Bryant</div>
+                        <div class="team-container"><div class="team">POA Bryant</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">O Plano</div>
+                        <div class="team-container"><div class="team">O Plano</div></div>
                     </div>
                 </div>
 
                 <div class="match-card">
                     <div class="time-badge">14:00</div>
                     <div class="match-info">
-                        <div class="team">Ducks Basquete</div>
+                        <div class="team-container"><div class="team">Ducks Basquete</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">Benchers Basquete</div>
+                        <div class="team-container"><div class="team">Benchers Basquete</div></div>
                     </div>
                 </div>
 
                 <div class="match-card">
                     <div class="time-badge">16:00</div>
                     <div class="match-info">
-                        <div class="team">VF Hoopers</div>
+                        <div class="team-container"><div class="team">VF Hoopers</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">Bex Team</div>
+                        <div class="team-container"><div class="team">Bex Team</div></div>
                     </div>
                 </div>
 
                 <div class="match-card">
                     <div class="time-badge">18:00</div>
                     <div class="match-info">
-                        <div class="team">Basquete Guaíba</div>
+                        <div class="team-container"><div class="team">Basquete Guaíba</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">Masca Hooper</div>
+                        <div class="team-container"><div class="team">Masca Hooper</div></div>
                     </div>
                 </div>
 
                 <div class="match-card">
                     <div class="time-badge">20:00</div>
                     <div class="match-info">
-                        <div class="team">Olaria Basketball</div>
+                        <div class="team-container"><div class="team">Olaria Basketball</div></div>
                         <div class="vs-badge">VS</div>
-                        <div class="team">Rays Basquete</div>
+                        <div class="team-container"><div class="team">Rays Basquete</div></div>
                     </div>
                 </div>
             </div>
-
-            <div class="footer">
-                Temporada 2026 • Liga Will Sports
-            </div>
+            <div class="footer">Temporada 2026 • Liga Will Sports</div>
         </div>
-
     </div>
 
     <script>
-        function showRound(roundNumber) {
-            // Esconder todas as rodadas
-            document.querySelectorAll('.round-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Remover active de todos os tabs
-            document.querySelectorAll('.round-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Mostrar a rodada selecionada
-            document.getElementById('round' + roundNumber).classList.add('active');
-            
-            // Ativar o tab correspondente
-            event.target.classList.add('active');
+        function showRound(n, el) {
+            document.querySelectorAll('.round-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.round-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('round' + n).classList.add('active');
+            el.classList.add('active');
         }
     </script>
 </body>
