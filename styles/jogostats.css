@@ -1,0 +1,275 @@
+:root {
+    --red: #cc0000;
+    --red-bright: #ff1a1a;
+    --red-dark: #8b0000;
+    --green: #00e676;
+    --bg: #080808;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: rgba(255,255,255,0.07);
+    --text: #ffffff;
+    --muted: rgba(255,255,255,0.45);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* TOP NAV */
+.topbar {
+    background: #0d0d0d;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.topbar .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.topbar .back-btn:hover { color: white; }
+.topbar-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    display: block;
+}
+.topbar-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    color: var(--red);
+}
+.topbar-logo-link {
+    margin-left: auto;
+    line-height: 0;
+    opacity: 0.95;
+}
+.topbar-logo-link:hover { opacity: 1; }
+
+/* Alerta (jogo inválido, sem parâmetro, erro de rede) */
+.stats-page-alert {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    font-size: 0.92em;
+    font-weight: 500;
+    color: rgba(255, 220, 180, 0.95);
+    background: rgba(139, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(204, 0, 0, 0.35);
+    text-align: center;
+    line-height: 1.45;
+}
+.stats-page-alert[hidden] {
+    display: none !important;
+}
+.stats-page-alert a {
+    color: #fff;
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 50%, #0a0a0a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 24px 28px;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(204,0,0,0.18) 0%, transparent 70%);
+    pointer-events: none;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(204,0,0,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.team-block {
+    flex: 1;
+    text-align: center;
+    padding: 16px 20px;
+}
+.team-block .team-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.1em, 3vw, 1.6em);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+.team-block.winner .team-name { color: #ffffff; }
+.team-score {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3em, 8vw, 5.5em);
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,0.3);
+}
+.team-block.winner .team-score {
+    color: var(--green);
+    text-shadow: 0 0 30px rgba(0,230,118,0.3);
+}
+
+.center-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 0 16px;
+}
+.vs-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.1em;
+    color: var(--red);
+    letter-spacing: 2px;
+}
+.divider-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--red), transparent);
+}
+
+/* CONTENT */
+.content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 16px;
+}
+
+/* SECTION HEADER */
+.section-header {
+    margin-bottom: 16px;
+    text-align: center;
+}
+.section-header h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* STATS TABLE */
+.stats-table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 650px;
+    margin: 0 auto 28px;
+}
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.99em;
+}
+.stats-table thead tr {
+    background: linear-gradient(to right, rgba(204,0,0,0.25), rgba(139,0,0,0.15));
+    border-bottom: 1px solid rgba(204,0,0,0.3);
+}
+.stats-table th {
+    padding: 10px 10px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+}
+.stats-table th:first-child { text-align: left; padding-left: 14px; }
+.stats-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+.stats-table tbody tr:last-child { border-bottom: none; }
+.stats-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+.stats-table td {
+    padding: 11px 10px;
+    text-align: center;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+}
+.stats-table td:first-child {
+    text-align: left;
+    padding-left: 14px;
+    font-weight: 700;
+    color: white;
+}
+/* EMPTY STATE */
+.empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--muted);
+}
+.empty-state .icon { font-size: 3em; margin-bottom: 12px; }
+.empty-state p { font-size: 0.9em; line-height: 1.6; }
+
+/* Empty state mais compacto dentro da tabela */
+.stats-table tbody td[colspan] .empty-state {
+    padding: 24px 16px;
+}
+.stats-table tbody td[colspan] .empty-state .icon {
+    font-size: 2.2em;
+    margin-bottom: 8px;
+}
+.stats-table tbody td[colspan] .empty-state p {
+    font-size: 0.84em;
+    line-height: 1.45;
+}
+
+/* FOOTER */
+.page-footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--muted);
+    font-size: 0.82em;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .stats-table th, .stats-table td { padding: 10px 8px; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero { padding: 24px 16px; }
+}

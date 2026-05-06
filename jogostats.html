@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas do Jogo - Liga Will Sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/jogostats.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <button class="back-btn" onclick="history.back()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Voltar
+        </button>
+
+        <span class="topbar-title" id="topbar-game-label">Estatísticas do Jogo</span>
+        <a href="index.html" class="topbar-logo-link" title="Início" aria-label="Início">
+            <img src="Images/Logo wil.svg" alt="LWS" class="topbar-logo">
+        </a>
+    </div>
+
+    <div id="stats-page-alert" class="stats-page-alert" role="status" hidden></div>
+
+    <div class="hero">
+        <div class="scoreboard">
+            <div class="team-block" id="home">
+                <div class="team-name" id="home-name">Time Casa</div>
+                <div class="team-score" id="home-score">0</div>
+            </div>
+
+            <div class="center-divider">
+                <div class="divider-line"></div>
+                <div class="vs-text">VS</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="team-block" id="away">
+                <div class="team-name" id="away-name">Time Visitante</div>
+                <div class="team-score" id="away-score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+            <div>
+                <div class="section-header">
+                    <h3 id="home-section-title">Time Casa</h3>
+                </div>
+                <div class="stats-table-wrap">
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Jogador</th>
+                                <th>PTS</th>
+                                <th>REB</th>
+                                <th>AST</th>
+                                <th>BLK</th>
+                                <th>ROU</th>
+                            </tr>
+                        </thead>
+                        <tbody id="home-tbody">
+                            <tr><td colspan="7"><div class="empty-state"><div class="icon">🏀</div><p>Nenhuma estatística inserida</p></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-header">
+                    <h3 id="away-section-title">Time Visitante</h3>
+                </div>
+                <div class="stats-table-wrap">
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Jogador</th>
+                                <th>PTS</th>
+                                <th>REB</th>
+                                <th>AST</th>
+                                <th>BLK</th>
+                                <th>ROU</th>
+                            </tr>
+                        </thead>
+                        <tbody id="away-tbody">
+                            <tr><td colspan="7"><div class="empty-state"><div class="icon">🏀</div><p>Nenhuma estatística inserida</p></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="page-footer">Temporada 2026 • Liga Will Sports</div>
+    <script src="js/data-loader.js"></script>
+    <script src="js/jogostats-page.js"></script>
+</body>
+</html>
