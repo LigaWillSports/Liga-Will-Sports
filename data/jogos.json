@@ -14,7 +14,7 @@
   { "id": "R2-J6", "rodadaId": 2, "horario": "18:00", "time1_id": "Raposas",           "time2_id": "Basquete São Léo",     "placar": { "time1": 75, "time2": 72 }, "ganhadorId": "Raposas",           "finalizado": true },
   { "id": "R2-J7", "rodadaId": 2, "horario": "20:00", "time1_id": "RTG Basquete",      "time2_id": "Cambrayers Cer Viamão","placar": { "time1": 72, "time2": 64 },"ganhadorId": "RTG Basquete",       "finalizado": true },
 
-  { "id": "R3-J1", "rodadaId": 3, "horario": "08:00", "time1_id": "Cambrayers Cer Viamão", "time2_id": "San Luis Spartans",    "placar": { "time1": 51, "time2": 82 }, "ganhadorId": "San Luis Spartans", "finalizado": true },
+  { "id": "R3-J1", "rodadaId": 3, "horario": "08:00", "time1_id": "Cambrayers Cer Viamão", "time2_id": "San Luis Spartans",    "placar": { "time1": 51, "time2": 83 }, "ganhadorId": "San Luis Spartans", "finalizado": true },
   { "id": "R3-J2", "rodadaId": 3, "horario": "10:00", "time1_id": "Ducks Basquete",        "time2_id": "O Plano",              "placar": { "time1": 82, "time2": 40 }, "ganhadorId": "Ducks Basquete",    "finalizado": true },
   { "id": "R3-J3", "rodadaId": 3, "horario": "12:00", "time1_id": "VF Hoopers",            "time2_id": "Sultanes",             "placar": { "time1": 45, "time2": 55 }, "ganhadorId": "Sultanes",          "finalizado": true },
   { "id": "R3-J4", "rodadaId": 3, "horario": "14:00", "time1_id": "Black Warriors",        "time2_id": "Benchers Basquete",    "placar": { "time1": 47, "time2": 58 }, "ganhadorId": "Benchers Basquete", "finalizado": true },
