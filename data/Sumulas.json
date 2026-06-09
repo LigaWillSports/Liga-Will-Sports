@@ -321,7 +321,7 @@
     "jogoId": "R2-J3",
     "times": [
       {
-        "timeId": "Ducks Basquete",
+        "timeId": "Ducks",
         "jogadores":[
           { "Nome": "Max",      "nmrCamiseta": 30, "stats":{ "pontos": 31,"assistencias": 4, "rebotes": 1, "tocos": 0, "roubos": 2}},
           { "Nome": "Luca",     "nmrCamiseta": 1,  "stats":{ "pontos": 18,"assistencias": 10,"rebotes": 11,"tocos": 3, "roubos": 3}},
