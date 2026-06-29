@@ -39,8 +39,8 @@
   { "id": "R5-J7", "rodadaId": 5, "horario": "20:00", "time1_id": "Masca Hooper",          "time2_id": "Benchers Basquete",     "placar": { "time1": 61, "time2": 59 }, "ganhadorId": "Masca Hooper", "finalizado": true },
 
   { "id": "R6-J1", "rodadaId": 6, "horario": "08:00", "time1_id": "RTG Basquete",          "time2_id": "Rays Basquete",         "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R6-J2", "rodadaId": 6, "horario": "10:00", "time1_id": "Bex Team",              "time2_id": "VF Hoopers",            "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R6-J3", "rodadaId": 6, "horario": "12:00", "time1_id": "San Luis Spartans",     "time2_id": "O Plano",               "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R6-J2", "rodadaId": 6, "horario": "10:00", "time1_id": "San Luis Spartans",     "time2_id": "O Plano",               "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R6-J3", "rodadaId": 6, "horario": "12:00", "time1_id": "Bex Team",              "time2_id": "VF Hoopers",            "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
   { "id": "R6-J4", "rodadaId": 6, "horario": "14:00", "time1_id": "Sapo Basketball",       "time2_id": "Raposas",               "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
   { "id": "R6-J5", "rodadaId": 6, "horario": "18:00", "time1_id": "Olaria Basketball",     "time2_id": "Ducks",        "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
   { "id": "R6-J6", "rodadaId": 6, "horario": "16:00", "time1_id": "Embaixadores",          "time2_id": "Corinthians Alvorada",  "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
