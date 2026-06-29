@@ -36,7 +36,7 @@
   { "id": "R5-J4", "rodadaId": 5, "horario": "14:00", "time1_id": "Corinthians Alvorada",  "time2_id": "Basquete São Léo",      "placar": { "time1": 70, "time2": 64 }, "ganhadorId": "Corinthians Alvorada", "finalizado": true },
   { "id": "R5-J5", "rodadaId": 5, "horario": "16:00", "time1_id": "O Plano",               "time2_id": "RTG Basquete",          "placar": { "time1": 73, "time2": 48 }, "ganhadorId": "O Plano", "finalizado": true },
   { "id": "R5-J6", "rodadaId": 5, "horario": "18:00", "time1_id": "Ducks",        "time2_id": "Cambrayers Cer Viamão", "placar": { "time1": 56, "time2": 45 }, "ganhadorId": "Ducks", "finalizado": true },
-  { "id": "R5-J7", "rodadaId": 5, "horario": "20:00", "time1_id": "Masca Hooper",          "time2_id": "Benchers Basquete",     "placar": { "time1": 59, "time2": 61 }, "ganhadorId": "Benchers Basquete", "finalizado": true },
+  { "id": "R5-J7", "rodadaId": 5, "horario": "20:00", "time1_id": "Masca Hooper",          "time2_id": "Benchers Basquete",     "placar": { "time1": 61, "time2": 59 }, "ganhadorId": "Masca Hooper", "finalizado": true },
 
   { "id": "R6-J1", "rodadaId": 6, "horario": "08:00", "time1_id": "RTG Basquete",          "time2_id": "Rays Basquete",         "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
   { "id": "R6-J2", "rodadaId": 6, "horario": "10:00", "time1_id": "Bex Team",              "time2_id": "VF Hoopers",            "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
