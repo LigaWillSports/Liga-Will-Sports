@@ -343,3 +343,140 @@ body::before {
 }
 .stats-btn svg { flex-shrink: 0; }
 @media (max-width: 768px) { .stats-btn { margin: 8px auto 0; } }
+
+.playoff-stage-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #cc0000;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+    padding-bottom: 10px;
+    text-align: center;
+}
+.playoff-stage-title:not(:first-child) {
+    margin-top: 30px;
+}
+
+.bracket-explanation {
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    background: rgba(204, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(204, 0, 0, 0.3);
+}
+
+.tournament-bracket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.bracket-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.bracket-title {
+    text-align: center;
+    font-weight: 700;
+    color: #cc0000;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bracket-matchup {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.b-team {
+    padding: 12px 16px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 1.05em;
+}
+
+.b-team:last-child {
+    border-bottom: none;
+    background: rgba(255,255,255,0.03);
+}
+
+.b-team.first-place {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    font-weight: 800;
+}
+
+.b-final-chave {
+    border-color: rgba(204, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.2);
+}
+
+.b-grande-final {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.b-jogo-separado {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.bracket-round:not(:last-child) .bracket-matchup::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+}
+.bracket-round:not(:first-child) .bracket-matchup::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+    .tournament-bracket {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .bracket-round:not(:last-child) .bracket-matchup::after,
+    .bracket-round:not(:first-child) .bracket-matchup::before {
+        display: none;
+    }
+    .bracket-round {
+        width: 100%;
+    }
+}
