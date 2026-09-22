@@ -58,7 +58,7 @@
   { "id": "R8-J1", "rodadaId": 8, "horario": "08:00", "time1_id": "Embaixadores", "time2_id": "Benchers Basquete", "placar": { "time1": 44, "time2": 42 }, "ganhadorId": "Embaixadores", "finalizado": true },
   { "id": "R8-J2", "rodadaId": 8, "horario": "10:00", "time1_id": "POA Bryant", "time2_id": "Raposas", "placar": { "time1": 47, "time2": 49 }, "ganhadorId": "Raposas", "finalizado": true },
   { "id": "R8-J3", "rodadaId": 8, "horario": "11:30", "time1_id": "Olaria Basketball", "time2_id": "Sultanes", "placar": { "time1": 66, "time2": 72 }, "ganhadorId": "Sultanes", "finalizado": true },
-  { "id": "R8-J4", "rodadaId": 8, "horario": "13:30", "time1_id": "Masca Hooper", "time2_id": "Sapo Basketball", "placar": { "time1": 53, "time2": 41 }, "ganhadorId": "Masca Hooper", "finalizado": true },
+  { "id": "R8-J4", "rodadaId": 8, "horario": "13:30", "time1_id": "Masca Hooper", "time2_id": "Sapo Basketball", "placar": { "time1": 41, "time2": 53 }, "ganhadorId": "Sapo Basketball", "finalizado": true },
   { "id": "R8-J5", "rodadaId": 8, "horario": "15:00", "time1_id": "Basquete Guaíba", "time2_id": "Basquete São Léo", "placar": { "time1": 41, "time2": 78 }, "ganhadorId": "Basquete São Léo", "finalizado": true },
   { "id": "R8-J6", "rodadaId": 8, "horario": "17:00", "time1_id": "Ducks", "time2_id": "RTG Basquete", "placar": { "time1": 81, "time2": 55 }, "ganhadorId": "Ducks", "finalizado": true },
   { "id": "R8-J7", "rodadaId": 8, "horario": "18:30", "time1_id": "San Luis Spartans", "time2_id": "Rays Basquete", "placar": { "time1": 92, "time2": 55 }, "ganhadorId": "San Luis Spartans", "finalizado": true },
