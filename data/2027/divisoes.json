@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "nome": "Divisão 1",
+    "apelido": "Prime",
+    "equipes": [
+      { "numero": 1,  "nome": "Olaria Basketball" },
+      { "numero": 2,  "nome": "Team Hooper" },
+      { "numero": 3,  "nome": "Basquete São Léo A" },
+      { "numero": 4,  "nome": "O Plano" },
+      { "numero": 5,  "nome": "VF Hoopers" },
+      { "numero": 6,  "nome": "POA Bryant A" },
+      { "numero": 7,  "nome": "Control Game" },
+      { "numero": 8,  "nome": "San Luis Spartans" },
+      { "numero": 9,  "nome": "Mens in Basketball Team" },
+      { "numero": 10, "nome": "Rays" }
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "Divisão 2",
+    "apelido": "Pro",
+    "equipes": [
+      { "numero": 11, "nome": "Fúria GNUS" },
+      { "numero": 12, "nome": "Embaixadores" },
+      { "numero": 13, "nome": "Cambrayers" },
+      { "numero": 14, "nome": "Bex Team" },
+      { "numero": 15, "nome": "Hunters Basketball" },
+      { "numero": 16, "nome": "RTG Basquete" },
+      { "numero": 17, "nome": "POA Bryant B" },
+      { "numero": 18, "nome": "Corinthians Alvorada" },
+      { "numero": 19, "nome": "SL Legends" },
+      { "numero": 20, "nome": "ACM" }
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "Divisão 3",
+    "apelido": "Rise",
+    "equipes": [
+      { "numero": 21, "nome": "Babilônia" },
+      { "numero": 22, "nome": "SL Youngs" },
+      { "numero": 23, "nome": "Parque Dos Maias" },
+      { "numero": 24, "nome": "Basquete Guaíba" },
+      { "numero": 25, "nome": "APX" },
+      { "numero": 26, "nome": "Julinho Basquete" },
+      { "numero": 27, "nome": "B7" },
+      { "numero": 28, "nome": "Benchers" },
+      { "numero": 29, "nome": null },
+      { "numero": 30, "nome": null }
+    ]
+  }
+]
