@@ -47,37 +47,12 @@ function teamLabel(equipe) {
     return `<span class="team-num">${equipe.numero}</span><span class="${cls}">${escapeHtml(equipe.nome)}</span>`;
 }
 
-function renderResumo(divisoes, rodadas, equipes) {
-    const totalJogos = rodadas.reduce((acc, r) => acc + r.jogos.length, 0);
-    const confirmadas = Array.from(equipes.values()).filter((e) => e.definida).length;
-    const inicio = rodadas[0] ? formatDateCurta(rodadas[0].data) : "—";
-    const fim = rodadas.length ? formatDateCurta(rodadas[rodadas.length - 1].data) : "—";
-
-    const items = [
-        { valor: divisoes.length, rotulo: "Divisões" },
-        { valor: `${confirmadas}/${equipes.size}`, rotulo: "Equipes" },
-        { valor: rodadas.length, rotulo: "Rodadas" },
-        { valor: totalJogos, rotulo: "Jogos" },
-        { valor: `${inicio} – ${fim}`, rotulo: "Período" }
-    ];
-
-    document.getElementById("seasonSummary").innerHTML = items
-        .map((item) => `
-            <div class="summary-item">
-                <div class="summary-value">${item.valor}</div>
-                <div class="summary-label">${item.rotulo}</div>
-            </div>
-        `)
-        .join("");
-}
-
 function renderDivisoes(divisoes, equipes) {
     document.getElementById("divisionsGrid").innerHTML = divisoes
         .map((divisao) => `
             <div class="division-card ${divisaoClasse(divisao)}">
                 <div class="division-head">
                     <span class="division-name">${escapeHtml(divisao.nome)}</span>
-                    <span class="division-tag">${escapeHtml(divisao.apelido)}</span>
                 </div>
                 <ol class="division-teams">
                     ${divisao.equipes
@@ -129,7 +104,7 @@ function renderRodada(rodada, divisoes, equipes, ativa) {
             return `
                 <div class="round-division ${divisaoClasse(divisao)}">
                     <div class="round-division-title">
-                        ${escapeHtml(divisao.nome)} <span class="division-tag">${escapeHtml(divisao.apelido)}</span>
+                        <span class="division-name">${escapeHtml(divisao.nome)}</span>
                         <span class="round-division-count">${jogos.length} ${jogos.length === 1 ? "jogo" : "jogos"}</span>
                     </div>
                     <div class="cal-grid">
@@ -192,7 +167,7 @@ function renderEquipe(numero, rodadas, equipes) {
         <div class="round-section active team-view ${divisaoClasse(equipe.divisao)}">
             <div class="round-header">
                 <h2>${escapeHtml(equipe.nome)}</h2>
-                <div class="date">${escapeHtml(equipe.divisao.nome)} • ${escapeHtml(equipe.divisao.apelido)} • ${totalJogos} jogos</div>
+                <div class="date">${escapeHtml(equipe.divisao.nome)} • ${totalJogos} jogos</div>
             </div>
             <div class="schedule-wrapper">
                 ${linhas}
@@ -207,7 +182,7 @@ function renderTeamFilter(divisoes, equipes) {
         '<option value="">Todas as equipes (por rodada)</option>' +
         divisoes
             .map((divisao) => `
-                <optgroup label="${escapeHtml(divisao.nome)} • ${escapeHtml(divisao.apelido)}">
+                <optgroup label="${escapeHtml(divisao.nome)}">
                     ${divisao.equipes
                         .map((e) => {
                             const equipe = equipes.get(e.numero);
@@ -234,7 +209,6 @@ async function initCalendario2027Page() {
     const roundsContainer = document.getElementById("roundsContainer");
     const teamFilter = document.getElementById("teamFilter");
 
-    renderResumo(divisoes, rodadas, equipes);
     renderDivisoes(divisoes, equipes);
     renderTeamFilter(divisoes, equipes);
     document.getElementById("calendarNote").textContent = calendario.observacao || "";

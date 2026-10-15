@@ -1,8 +1,7 @@
 [
   {
     "id": 1,
-    "nome": "Divisão 1",
-    "apelido": "Prime",
+    "nome": "Prime",
     "equipes": [
       { "numero": 1,  "nome": "Olaria Basketball" },
       { "numero": 2,  "nome": "Team Hooper" },
@@ -18,8 +17,7 @@
   },
   {
     "id": 2,
-    "nome": "Divisão 2",
-    "apelido": "Pro",
+    "nome": "Pro",
     "equipes": [
       { "numero": 11, "nome": "Fúria GNUS" },
       { "numero": 12, "nome": "Embaixadores" },
@@ -35,8 +33,7 @@
   },
   {
     "id": 3,
-    "nome": "Divisão 3",
-    "apelido": "Rise",
+    "nome": "Rise",
     "equipes": [
       { "numero": 21, "nome": "Babilônia" },
       { "numero": 22, "nome": "SL Youngs" },
