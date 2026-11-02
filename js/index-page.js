@@ -80,7 +80,7 @@ async function initIndexPage() {
     roundTabs.innerHTML = sortedRodadas
         .map((rodada) => `
             <button class="round-tab ${rodada.id === activeRoundId ? "active" : ""}" onclick="showRound(${rodada.id}, this)">
-                ${rodada.id === 13 ? '🏆PLAYOFFS🏆' : `Rodada ${rodada.id}`}
+                ${rodada.playoffs ? '🏆PLAYOFFS🏆' : `Rodada ${rodada.id}`}
             </button>
         `)
         .join("");
@@ -96,7 +96,7 @@ async function initIndexPage() {
             return `
                 <div id="round${rodada.id}" class="round-section ${rodada.id === activeRoundId ? "active" : ""}">
                     <div class="round-header">
-                        <h2>${rodada.id === 13 ? '🏆PLAYOFFS🏆' : `Rodada ${rodada.id}`}</h2>
+                        <h2>${rodada.playoffs ? '🏆PLAYOFFS🏆' : `Rodada ${rodada.id}`}</h2>
                         <div class="date">${formatDateBR(rodada.data)}</div>
                     </div>
                     <div class="schedule-wrapper">
