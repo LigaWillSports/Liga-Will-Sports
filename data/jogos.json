@@ -64,14 +64,15 @@
   { "id": "R8-J7", "rodadaId": 8, "horario": "18:30", "time1_id": "San Luis Spartans", "time2_id": "Rays Basquete", "placar": { "time1": 92, "time2": 55 }, "ganhadorId": "San Luis Spartans", "finalizado": true },
   { "id": "R8-J8", "rodadaId": 8, "horario": "20:00", "time1_id": "O Plano", "time2_id": "VF Hoopers", "placar": { "time1": 43, "time2": 44 }, "ganhadorId": "VF Hoopers", "finalizado": true },
 
-  { "id": "R9-J1", "rodadaId": 9, "horario": "08:00", "time1_id": "Corinthians Alvorada", "time2_id": "Benchers Basquete", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J2", "rodadaId": 9, "horario": "10:00", "time1_id": "O Plano", "time2_id": "Cambrayers Cer Viamão", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J3", "rodadaId": 9, "horario": "11:30", "time1_id": "Black Warriors", "time2_id": "Raposas", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J4", "rodadaId": 9, "horario": "13:30", "time1_id": "San Luis Spartans", "time2_id": "Ducks", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J5", "rodadaId": 9, "horario": "15:00", "time1_id": "Cambrayers Cer Viamão", "time2_id": "Bex Team", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J6", "rodadaId": 9, "horario": "17:00", "time1_id": "POA Bryant", "time2_id": "Basquete Guaíba", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J7", "rodadaId": 9, "horario": "18:30", "time1_id": "Sultanes", "time2_id": "Rays Basquete", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
-  { "id": "R9-J8", "rodadaId": 9, "horario": "20:00", "time1_id": "RTG Basquete", "time2_id": "VF Hoopers", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  
+  { "id": "R9-J1", "rodadaId": 9, "horario": "08:00", "time1_id": "Corinthians Alvorada", "time2_id": "Benchers Basquete",     "placar": { "time1": 25, "time2": 57 }, "ganhadorId": "Benchers Basquete", "finalizado": true },
+  { "id": "R9-J2", "rodadaId": 9, "horario": "10:00", "time1_id": "O Plano",              "time2_id": "Cambrayers Cer Viamão", "placar": { "time1": 66, "time2": 52 }, "ganhadorId": "O Plano", "finalizado": true },
+  { "id": "R9-J3", "rodadaId": 9, "horario": "11:30", "time1_id": "Black Warriors",       "time2_id": "Raposas",               "placar": { "time1": 59, "time2": 70 }, "ganhadorId": "Raposas", "finalizado": true },
+  { "id": "R9-J4", "rodadaId": 9, "horario": "13:30", "time1_id": "San Luis Spartans",    "time2_id": "Ducks",                 "placar": { "time1": 54, "time2": 69 }, "ganhadorId": "Ducks", "finalizado": true },
+  { "id": "R9-J5", "rodadaId": 9, "horario": "15:00", "time1_id": "Cambrayers Cer Viamão","time2_id": "Bex Team",              "placar": { "time1": 59, "time2": 63 }, "ganhadorId": "Bex Team", "finalizado": true },
+  { "id": "R9-J6", "rodadaId": 9, "horario": "17:00", "time1_id": "POA Bryant",           "time2_id": "Basquete Guaíba",       "placar": { "time1": 73, "time2": 32 }, "ganhadorId": "POA Bryant", "finalizado": true },
+  { "id": "R9-J7", "rodadaId": 9, "horario": "18:30", "time1_id": "Sultanes",             "time2_id": "Rays Basquete",         "placar": { "time1": 55, "time2": 36 }, "ganhadorId": "Sultanes", "finalizado": true },
+  { "id": "R9-J8", "rodadaId": 9, "horario": "20:00", "time1_id": "RTG Basquete",         "time2_id": "VF Hoopers",            "placar": { "time1": 63, "time2": 34 }, "ganhadorId": "RTG Basquete", "finalizado": true },
 
   { "id": "R10-J1", "rodadaId": 10, "horario": "08:00", "time1_id": "Raposas", "time2_id": "Corinthians Alvorada", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
   { "id": "R10-J2", "rodadaId": 10, "horario": "10:00", "time1_id": "Masca Hooper", "time2_id": "Basquete Guaíba", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
