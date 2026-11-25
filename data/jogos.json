@@ -101,5 +101,14 @@
   { "id": "R12-J6", "rodadaId": 12, "horario": "15:30", "time1_id": "Bex Team", "time2_id": "San Luis Spartans", "placar": { "time1": 54, "time2": 60 }, "ganhadorId": "San Luis Spartans", "finalizado": true },
   { "id": "R12-J7", "rodadaId": 12, "horario": "17:00", "time1_id": "Black Warriors", "time2_id": "Corinthians Alvorada", "placar": { "time1": 55, "time2": 66 }, "ganhadorId": "Corinthians Alvorada", "finalizado": true },
   { "id": "R12-J8", "rodadaId": 12, "horario": "18:30", "time1_id": "Cambrayers Cer Viamão", "time2_id": "Rays Basquete", "placar": { "time1": 50, "time2": 59 }, "ganhadorId": "Rays Basquete", "finalizado": true },
-  { "id": "R12-J9", "rodadaId": 12, "horario": "20:00", "time1_id": "Ducks", "time2_id": "Sultanes", "placar": { "time1": 59, "time2": 70 }, "ganhadorId": "Sultanes", "finalizado": true }
+  { "id": "R12-J9", "rodadaId": 12, "horario": "20:00", "time1_id": "Ducks", "time2_id": "Sultanes", "placar": { "time1": 59, "time2": 70 }, "ganhadorId": "Sultanes", "finalizado": true },
+
+  { "id": "R13-J1", "rodadaId": 13, "grupo": 1, "fase": "Semifinal", "horario": "11:00", "time1_id": "Ducks", "time1_seed": 2, "time2_id": "Bex Team", "time2_seed": 5, "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J2", "rodadaId": 13, "grupo": 1, "fase": "Semifinal", "horario": "12:30", "time1_id": "San Luis Spartans", "time1_seed": 3, "time2_id": "Sultanes", "time2_seed": 4, "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J3", "rodadaId": 13, "grupo": 1, "fase": "Decisão da Vaga", "horario": "15:30", "time1_id": null, "time1_vencedorDe": "R13-J1", "time2_id": null, "time2_vencedorDe": "R13-J2", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J4", "rodadaId": 13, "grupo": 1, "fase": "Grande Final", "horario": "18:30", "time1_id": "Olaria Basketball", "time1_seed": 1, "time2_id": null, "time2_vencedorDe": "R13-J3", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J5", "rodadaId": 13, "grupo": 2, "fase": "Semifinal", "horario": "08:00", "time1_id": "Embaixadores", "time1_seed": 2, "time2_id": "Benchers Basquete", "time2_seed": 5, "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J6", "rodadaId": 13, "grupo": 2, "fase": "Semifinal", "horario": "09:30", "time1_id": "POA Bryant", "time1_seed": 3, "time2_id": "Basquete São Léo", "time2_seed": 4, "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J7", "rodadaId": 13, "grupo": 2, "fase": "Decisão da Vaga", "horario": "14:00", "time1_id": null, "time1_vencedorDe": "R13-J5", "time2_id": null, "time2_vencedorDe": "R13-J6", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false },
+  { "id": "R13-J8", "rodadaId": 13, "grupo": 2, "fase": "Grande Final", "horario": "17:00", "time1_id": "Raposas", "time1_seed": 1, "time2_id": null, "time2_vencedorDe": "R13-J7", "placar": { "time1": 0, "time2": 0 }, "ganhadorId": null, "finalizado": false }
 ]
